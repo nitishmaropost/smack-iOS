@@ -9,8 +9,10 @@ target 'Smack' do
 
   # Pods for Smack
   pod 'Alamofire', '4.5.0'
-  pod 'SwiftyJSON', '3.1.4'
-  pod 'Socket.IO-Client-Swift'
+  pod 'SwiftyJSON', '~> 4.0'
+  # pod 'Socket.IO-Client-Swift'
+  pod 'Socket.IO-Client-Swift', '~> 13.3.0'
+  pod 'Starscream', '<= 3.0.5'
 
   target 'SmackTests' do
     inherit! :search_paths

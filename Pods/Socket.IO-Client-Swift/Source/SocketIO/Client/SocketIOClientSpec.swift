@@ -92,15 +92,14 @@ public protocol SocketIOClientSpec : AnyObject {
     /// Disconnects the socket.
     func disconnect()
 
-    /// Send an event to the server, with optional data items and optional write completion handler.
+    /// Send an event to the server, with optional data items.
     ///
     /// If an error occurs trying to transform `items` into their socket representation, a `SocketClientEvent.error`
     /// will be emitted. The structure of the error data is `[eventName, items, theError]`
     ///
     /// - parameter event: The event to send.
     /// - parameter items: The items to send with this event. May be left out.
-    /// - parameter completion: Callback called on transport write completion.
-    func emit(_ event: String, _ items: SocketData..., completion: (() -> ())?)
+    func emit(_ event: String, _ items: SocketData...)
 
     /// Call when you wish to tell the server that you've received the event for `ack`.
     ///
@@ -335,16 +334,4 @@ public enum SocketClientEvent : String {
     /// }
     /// ```
     case statusChange
-
-    /// Emitted when when upgrading the http connection to a websocket connection.
-    ///
-    /// Usage:
-    ///
-    /// ```swift
-    /// socket.on(clientEvent: .websocketUpgrade) {data, ack in
-    ///     let headers = (data as [Any])[0]
-    ///     // Some header logic
-    /// }
-    /// ```
-    case websocketUpgrade
 }

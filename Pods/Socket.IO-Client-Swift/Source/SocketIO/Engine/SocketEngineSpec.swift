@@ -137,8 +137,7 @@ import Starscream
     /// - parameter msg: The message to send.
     /// - parameter type: The type of this message.
     /// - parameter data: Any data that this message has.
-    /// - parameter completion: Callback called on transport write completion.
-    func write(_ msg: String, withType type: SocketEnginePacketType, withData data: [Data], completion: (() -> ())?)
+    func write(_ msg: String, withType type: SocketEnginePacketType, withData data: [Data])
 }
 
 extension SocketEngineSpec {
@@ -159,11 +158,11 @@ extension SocketEngineSpec {
     func addHeaders(to req: inout URLRequest, includingCookies additionalCookies: [HTTPCookie]? = nil) {
         var cookiesToAdd: [HTTPCookie] = cookies ?? []
         cookiesToAdd += additionalCookies ?? []
-
+        
         if !cookiesToAdd.isEmpty {
             req.allHTTPHeaderFields = HTTPCookie.requestHeaderFields(with: cookiesToAdd)
         }
-
+        
         if let extraHeaders = extraHeaders {
             for (headerName, value) in extraHeaders {
                 req.setValue(value, forHTTPHeaderField: headerName)
@@ -180,7 +179,7 @@ extension SocketEngineSpec {
     }
 
     /// Send an engine message (4)
-    func send(_ msg: String, withData datas: [Data], completion: (() -> ())? = nil) {
-        write(msg, withType: .message, withData: datas, completion: completion)
+    func send(_ msg: String, withData datas: [Data]) {
+        write(msg, withType: .message, withData: datas)
     }
 }
