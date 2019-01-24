@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A3340313262B1886D7B2C240 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DCB63369D744853FA7A3D5 /* Pods_Smack.framework */; };
 		BA7CD3940BCC3B4D8BD016AA /* Pods_SmackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C07C870086A65C17C1341D /* Pods_SmackTests.framework */; };
+		BF35B2DB21F9DB1E00F6E97F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35B2DA21F9DB1E00F6E97F /* Constants.swift */; };
+		BF35B2DD21F9EC6000F6E97F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35B2DC21F9EC6000F6E97F /* LoginVC.swift */; };
 		BF94029821F885D000EDA559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF94029721F885D000EDA559 /* AppDelegate.swift */; };
 		BF94029D21F885D000EDA559 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF94029B21F885D000EDA559 /* Main.storyboard */; };
 		BF94029F21F885D100EDA559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF94029E21F885D100EDA559 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		4793A2749DD9A332C37B3EF6 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 		48DCB63369D744853FA7A3D5 /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58230927B6FC23865EAD662B /* Pods-SmackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmackTests/Pods-SmackTests.release.xcconfig"; sourceTree = "<group>"; };
+		BF35B2DA21F9DB1E00F6E97F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BF35B2DC21F9EC6000F6E97F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BF94029421F885D000EDA559 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF94029721F885D000EDA559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF94029C21F885D000EDA559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +98,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BF35B2D921F9DB0600F6E97F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BF35B2DA21F9DB1E00F6E97F /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		BF94028B21F885D000EDA559 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +129,7 @@
 		BF94029621F885D000EDA559 /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				BF35B2D921F9DB0600F6E97F /* Utilities */,
 				BF9402C121F9C95E00EDA559 /* Models */,
 				BF9402C021F9C95700EDA559 /* Views */,
 				BF9402BF21F9C94A00EDA559 /* ViewControllers */,
@@ -146,6 +159,7 @@
 			children = (
 				BF9402C221F9C97F00EDA559 /* ChatVC.swift */,
 				BF9402C421F9C98F00EDA559 /* ChannelVC.swift */,
+				BF35B2DC21F9EC6000F6E97F /* LoginVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -335,9 +349,11 @@
 			files = (
 				BF9402C521F9C98F00EDA559 /* ChannelVC.swift in Sources */,
 				BF9402C321F9C97F00EDA559 /* ChatVC.swift in Sources */,
+				BF35B2DD21F9EC6000F6E97F /* LoginVC.swift in Sources */,
 				BF9402C721F9CECC00EDA559 /* GradientView.swift in Sources */,
 				BF94029821F885D000EDA559 /* AppDelegate.swift in Sources */,
 				BF9402BA21F897D100EDA559 /* SWRevealViewController.m in Sources */,
+				BF35B2DB21F9DB1E00F6E97F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
