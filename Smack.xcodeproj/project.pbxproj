@@ -93,6 +93,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6BC004E521FC92FA00463360 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B3669F82E822B36D77DE433A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,9 +150,9 @@
 		BF94029621F885D000EDA559 /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				6BC004E521FC92FA00463360 /* Model */,
 				BF35B2E021FAE86300F6E97F /* Services */,
 				BF35B2D921F9DB0600F6E97F /* Utilities */,
-				BF9402C121F9C95E00EDA559 /* Models */,
 				BF9402C021F9C95700EDA559 /* Views */,
 				BF9402BF21F9C94A00EDA559 /* ViewControllers */,
 				BF9402B821F897D100EDA559 /* SWRevealViewController.h */,
@@ -187,13 +194,6 @@
 				BF35B2E321FB276500F6E97F /* RoundedButton.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		BF9402C121F9C95E00EDA559 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
