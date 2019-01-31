@@ -23,6 +23,14 @@ class CreateAccountVC: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if UserDataService.instance.avatarName != "" {
+            self.userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            self.avatarName = UserDataService.instance.avatarName
+        }
+    }
+    
     @IBAction func closePressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: UNWIND, sender: nil)
     }
