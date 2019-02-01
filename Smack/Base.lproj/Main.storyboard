@@ -105,7 +105,7 @@
                                 <rect key="frame" x="281" y="84.5" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0iY-aq-Mza">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0iY-aq-Mza" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="20" y="572" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="3Kh-em-LwP"/>
@@ -253,8 +253,8 @@
                                             <constraint firstAttribute="width" constant="250" id="6VZ-E4-gel"/>
                                             <constraint firstAttribute="height" constant="30" id="8QP-Mm-Ff1"/>
                                         </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAV-Q1-av5">
@@ -271,8 +271,8 @@
                                             <constraint firstAttribute="width" constant="250" id="3D3-jY-n8D"/>
                                             <constraint firstAttribute="height" constant="30" id="j2h-Ug-QS6"/>
                                         </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ED3-0t-hhk">
@@ -331,8 +331,8 @@
                                             <constraint firstAttribute="height" constant="30" id="Uea-kN-k4w"/>
                                             <constraint firstAttribute="width" constant="250" id="XGl-97-S4r"/>
                                         </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YzC-9r-QY1">
@@ -349,8 +349,8 @@
                                             <constraint firstAttribute="height" constant="30" id="4UN-h6-zcg"/>
                                             <constraint firstAttribute="width" constant="250" id="Y7V-3C-crX"/>
                                         </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJI-I1-Xan">
@@ -367,8 +367,8 @@
                                             <constraint firstAttribute="width" constant="250" id="eri-lJ-fZr"/>
                                             <constraint firstAttribute="height" constant="30" id="sbL-Kf-O3K"/>
                                         </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkF-3S-Hdd">
@@ -415,7 +415,7 @@
                                 <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="dBY-Pz-Lf1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="dBY-Pz-Lf1" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="137" y="307" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="MfC-5v-JuY"/>
@@ -454,6 +454,10 @@
                                     <action selector="createAccountBtnPressed:" destination="BX8-dm-sVA" eventType="touchUpInside" id="9AT-GB-Kdz"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-Cb-sIn">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -464,18 +468,21 @@
                             <constraint firstItem="8UJ-dZ-FWA" firstAttribute="centerX" secondItem="ab8-3I-JIz" secondAttribute="centerX" id="Aqd-Ny-CmY"/>
                             <constraint firstItem="YYb-JM-AFR" firstAttribute="centerX" secondItem="ab8-3I-JIz" secondAttribute="centerX" id="BpY-9a-0fZ"/>
                             <constraint firstItem="919-DX-Qm5" firstAttribute="bottom" secondItem="QLY-Z0-hTj" secondAttribute="bottom" constant="20" id="C78-Rx-ElL"/>
+                            <constraint firstItem="bRR-Cb-sIn" firstAttribute="centerY" secondItem="ab8-3I-JIz" secondAttribute="centerY" id="IAO-Cp-qKH"/>
                             <constraint firstItem="Rlm-P2-4YT" firstAttribute="top" secondItem="8UJ-dZ-FWA" secondAttribute="bottom" constant="40" id="MSV-Ul-XF1"/>
                             <constraint firstItem="YYb-JM-AFR" firstAttribute="top" secondItem="dBY-Pz-Lf1" secondAttribute="top" id="VMq-Jb-jJc"/>
                             <constraint firstItem="Rlm-P2-4YT" firstAttribute="centerX" secondItem="ab8-3I-JIz" secondAttribute="centerX" id="g0x-Fz-Iso"/>
                             <constraint firstItem="HOm-FB-GJb" firstAttribute="centerX" secondItem="ab8-3I-JIz" secondAttribute="centerX" id="g51-tV-3Rz"/>
                             <constraint firstItem="8UJ-dZ-FWA" firstAttribute="top" secondItem="919-DX-Qm5" secondAttribute="top" constant="40" id="rGC-Hx-1fv"/>
                             <constraint firstItem="YYb-JM-AFR" firstAttribute="width" secondItem="dBY-Pz-Lf1" secondAttribute="width" id="rxa-NA-cTi"/>
+                            <constraint firstItem="bRR-Cb-sIn" firstAttribute="centerX" secondItem="ab8-3I-JIz" secondAttribute="centerX" id="sh3-WG-sug"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="919-DX-Qm5"/>
                     </view>
                     <connections>
                         <outlet property="emailTxt" destination="rFz-vh-9LH" id="s0E-NU-uak"/>
                         <outlet property="passwordTxt" destination="LYc-ih-Qlh" id="Oy3-Si-IPZ"/>
+                        <outlet property="spinnerCreateAccount" destination="bRR-Cb-sIn" id="Dak-mv-wng"/>
                         <outlet property="userImg" destination="dBY-Pz-Lf1" id="6aP-Lm-nQ8"/>
                         <outlet property="userNameTxt" destination="fVk-Dr-EZ0" id="C5c-gv-m73"/>
                         <segue destination="had-ur-JOr" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="ot6-dd-HC5"/>
