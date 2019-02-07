@@ -233,6 +233,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="FqG-US-dGO" eventType="touchUpInside" id="mU7-tP-n1i"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9m-pb-DcZ">
                                 <rect key="frame" x="84" y="389" width="207" height="30"/>
@@ -290,13 +293,19 @@
                                     <constraint firstItem="cjE-iL-NCO" firstAttribute="centerX" secondItem="0jm-7v-ptF" secondAttribute="centerX" id="hzj-iL-w82"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kkk-b7-Rl6">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="kkk-b7-Rl6" firstAttribute="centerX" secondItem="Qq2-gp-FLB" secondAttribute="centerX" id="2X3-tk-bti"/>
                             <constraint firstItem="saV-ZL-rom" firstAttribute="trailing" secondItem="7Kr-fQ-Sk9" secondAttribute="trailing" constant="20" id="2kN-bG-ABJ"/>
                             <constraint firstItem="0jm-7v-ptF" firstAttribute="centerX" secondItem="Qq2-gp-FLB" secondAttribute="centerX" id="CKk-MC-OtS"/>
                             <constraint firstItem="0jm-7v-ptF" firstAttribute="top" secondItem="8tg-Bh-Ak4" secondAttribute="bottom" constant="57" id="DLy-9D-VJu"/>
                             <constraint firstItem="Fqg-L2-aML" firstAttribute="top" secondItem="0jm-7v-ptF" secondAttribute="bottom" constant="40" id="HNo-MK-E0m"/>
+                            <constraint firstItem="kkk-b7-Rl6" firstAttribute="centerY" secondItem="Qq2-gp-FLB" secondAttribute="centerY" id="KgK-jD-sjq"/>
                             <constraint firstItem="7Kr-fQ-Sk9" firstAttribute="top" secondItem="saV-ZL-rom" secondAttribute="top" constant="8" id="PCU-Ch-rbf"/>
                             <constraint firstItem="8tg-Bh-Ak4" firstAttribute="centerX" secondItem="Qq2-gp-FLB" secondAttribute="centerX" id="Rrv-mC-A4D"/>
                             <constraint firstItem="x9m-pb-DcZ" firstAttribute="centerX" secondItem="Qq2-gp-FLB" secondAttribute="centerX" id="cdU-Mc-ert"/>
@@ -308,6 +317,9 @@
                         <viewLayoutGuide key="safeArea" id="saV-ZL-rom"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="kkk-b7-Rl6" id="KIe-3t-qRe"/>
+                        <outlet property="txtPassword" destination="cjE-iL-NCO" id="g4r-qM-Axr"/>
+                        <outlet property="txtUsername" destination="x8H-R3-HMr" id="reU-Qg-tjt"/>
                         <segue destination="BX8-dm-sVA" kind="show" identifier="toCreateAccount" id="GAV-90-d9m"/>
                     </connections>
                 </viewController>
