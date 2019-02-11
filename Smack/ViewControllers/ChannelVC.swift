@@ -50,6 +50,13 @@ class ChannelVC: UIViewController {
         }
     }
     
+    @IBAction func addChannelButton(_ sender: UIButton) {
+        let addChannel = AddChannelVC()
+        addChannel.modalPresentationStyle = .custom
+        self.present(addChannel, animated: true, completion: nil)
+    }
+    
+    
     @objc func userDataDidChange(_ notification: Notification) {
         self.setupUserInfo()
     }
