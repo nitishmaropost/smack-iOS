@@ -116,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="126" width="375" height="426"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="h13-pC-Okm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChannelCell" id="h13-pC-Okm" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h13-pC-Okm" id="2Xl-2h-dZt">
@@ -136,8 +136,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="channelTitle" destination="5Iz-mO-eCi" id="dLc-ZZ-SUj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Fx-zN-czZ" id="l61-2n-g9D"/>
+                                    <outlet property="delegate" destination="6Fx-zN-czZ" id="cD7-cq-vGl"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csv-lx-ACT">
                                 <rect key="frame" x="115" y="594.5" width="41" height="30"/>
@@ -176,6 +183,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="Csv-lx-ACT" id="TkD-ht-OnN"/>
+                        <outlet property="tableChannel" destination="BP4-Wi-QKv" id="wy6-fY-ctw"/>
                         <outlet property="userImg" destination="0iY-aq-Mza" id="XgK-pj-MtY"/>
                         <segue destination="FqG-US-dGO" kind="show" identifier="toLogin" id="ph1-53-axp"/>
                     </connections>

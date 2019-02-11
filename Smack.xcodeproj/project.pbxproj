@@ -31,6 +31,7 @@
 		BF9402C321F9C97F00EDA559 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9402C221F9C97F00EDA559 /* ChatVC.swift */; };
 		BF9402C521F9C98F00EDA559 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9402C421F9C98F00EDA559 /* ChannelVC.swift */; };
 		BF9402C721F9CECC00EDA559 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9402C621F9CECC00EDA559 /* GradientView.swift */; };
+		BFC65265221156E600CFE543 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC65264221156E600CFE543 /* ChannelCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		BF9402C221F9C97F00EDA559 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		BF9402C421F9C98F00EDA559 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		BF9402C621F9CECC00EDA559 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		BFC65264221156E600CFE543 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		D3C07C870086A65C17C1341D /* Pods_SmackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C63EB789A25619E5357737 /* Pods-SmackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmackTests/Pods-SmackTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +226,7 @@
 				BF35B2E321FB276500F6E97F /* RoundedButton.swift */,
 				BF388A292202F7BE003BE457 /* AvatarCell.swift */,
 				BF388A2B22044C2A003BE457 /* CircleImage.swift */,
+				BFC65264221156E600CFE543 /* ChannelCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF388A3322085DF5003BE457 /* ProfileVC.swift in Sources */,
+				BFC65265221156E600CFE543 /* ChannelCell.swift in Sources */,
 				BF9402C521F9C98F00EDA559 /* ChannelVC.swift in Sources */,
 				BF388A282202F5E1003BE457 /* AvatarPickerVC.swift in Sources */,
 				BF35B2E421FB276500F6E97F /* RoundedButton.swift in Sources */,

@@ -9,8 +9,9 @@
 import UIKit
 
 class ChannelVC: UIViewController {
-
+    
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var tableChannel: UITableView!
     
     @IBOutlet weak var userImg: CircleImage!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
@@ -51,5 +52,26 @@ class ChannelVC: UIViewController {
     
     @objc func userDataDidChange(_ notification: Notification) {
         self.setupUserInfo()
+    }
+}
+
+extension ChannelVC: UITableViewDelegate {
+    
+}
+
+extension ChannelVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChannelCell", for: indexPath) as? ChannelCell {
+            let channel = MessageService.instance.channels[indexPath.row]
+            cell.configureCell(channel: channel)
+            return cell
+        } else {
+            return UITableViewCell()
+            
+        }
     }
 }
