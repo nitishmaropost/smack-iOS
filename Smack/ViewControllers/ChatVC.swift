@@ -15,6 +15,10 @@ class ChatVC: UIViewController {
     @IBOutlet weak var labelChannelName: UILabel!
     @IBOutlet weak var txtMessage: UITextField!
     @IBOutlet weak var tableChat: UITableView!
+    @IBOutlet weak var buttonSend: UIButton!
+    
+    // Variables
+    var isTyping = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +27,22 @@ class ChatVC: UIViewController {
         self.view.addGestureRecognizer(tap)
         self.tableChat.estimatedRowHeight = 80
         self.tableChat.rowHeight = UITableViewAutomaticDimension
+        self.buttonSend.isHidden = true
         self.menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-       // self.labelChannelName.text = "#\(AuthService.instance.selectedChannel)"
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
+        
+        SocketService.instance.getChatMessage { (success) in
+            if success {
+                self.tableChat.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    self.tableChat.scrollToRow(at: IndexPath(row: MessageService.instance.messages.count - 1, section: 0), at: .bottom, animated: true)
+                }
+            }
+        }
+        
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail { (success) in
                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
@@ -59,11 +73,26 @@ class ChatVC: UIViewController {
         }
     }
     
+    @IBAction func textFieldTextChanged(_ sender: Any) {
+        if self.txtMessage.text == "" {
+            self.isTyping = false
+            self.buttonSend.isHidden = true
+        } else {
+            if self.isTyping == false {
+                self.buttonSend.isHidden = false
+            }
+            
+            self.isTyping = true
+        }
+    }
+    
+    
     @objc func userDataDidChange(_ notification: Notification) {
         if AuthService.instance.isLoggedIn {
            self.onLoginGetMessages()
         } else {
             self.labelChannelName.text = "Please login"
+            self.tableChat.reloadData()
         }
     }
     

@@ -73,6 +73,9 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldTextChanged:" destination="3sm-gS-SZH" eventType="editingChanged" id="AWm-UG-m4b"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fR-ZO-m9B">
                                 <rect key="frame" x="340" y="632" width="30" height="30"/>
@@ -168,6 +171,7 @@
                         <viewLayoutGuide key="safeArea" id="p41-sP-4Ee"/>
                     </view>
                     <connections>
+                        <outlet property="buttonSend" destination="1fR-ZO-m9B" id="8O1-Ip-d5p"/>
                         <outlet property="labelChannelName" destination="5Oc-Us-bQV" id="cSY-bs-nhv"/>
                         <outlet property="menuBtn" destination="lE0-S1-ieE" id="tUp-Kz-v9q"/>
                         <outlet property="tableChat" destination="GFR-of-dyw" id="v7j-VT-Nc7"/>
