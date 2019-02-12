@@ -74,6 +74,7 @@
                         <viewLayoutGuide key="safeArea" id="p41-sP-4Ee"/>
                     </view>
                     <connections>
+                        <outlet property="labelChannelName" destination="5Oc-Us-bQV" id="cSY-bs-nhv"/>
                         <outlet property="menuBtn" destination="lE0-S1-ieE" id="tUp-Kz-v9q"/>
                     </connections>
                 </viewController>
@@ -288,7 +289,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ED3-0t-hhk">
                                         <rect key="frame" x="0.0" y="92" width="250" height="2"/>
@@ -393,7 +394,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkF-3S-Hdd">
                                         <rect key="frame" x="0.0" y="144" width="250" height="2"/>

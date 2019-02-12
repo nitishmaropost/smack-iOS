@@ -43,6 +43,15 @@ class AuthService {
         }
     }
     
+    var selectedChannel: String {
+        get {
+            return defaults.value(forKey: SELECTED_CHANNEL) as! String
+        }
+        set {
+            defaults.set(newValue, forKey: SELECTED_CHANNEL)
+        }
+    }
+    
     func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
         let lowerCaseEmail = email.lowercased()
         

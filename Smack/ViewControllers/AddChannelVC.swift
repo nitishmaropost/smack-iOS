@@ -9,7 +9,7 @@
 import UIKit
 
 class AddChannelVC: UIViewController {
-
+    
     
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtDescription: UITextField!
@@ -20,12 +20,12 @@ class AddChannelVC: UIViewController {
         super.viewDidLoad()
         self.setupView()
     }
-
+    
     func setupView() {
         let closeTouch = UITapGestureRecognizer(target: self, action: #selector(AddChannelVC.closeTap(_:)))
         self.bgView.addGestureRecognizer(closeTouch)
         self.txtName.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceholder])
-        self.txtDescription.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceholder])
+        self.txtDescription.attributedPlaceholder = NSAttributedString(string: "Description", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceholder])
     }
     
     @objc func closeTap(_ recogniser: UITapGestureRecognizer) {
@@ -35,7 +35,6 @@ class AddChannelVC: UIViewController {
     @IBAction func closeButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    
     
     @IBAction func createChannelButtonTapped(_ sender: UIButton) {
         guard let channelName = self.txtName.text, self.txtName.text != "" else {

@@ -20,6 +20,8 @@ class ChannelVC: UIViewController {
         super.viewDidLoad()
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
+        
         SocketService.instance.getChannel { (success) in
             if success {
                 self.tableChannel.reloadData()
@@ -41,6 +43,7 @@ class ChannelVC: UIViewController {
             self.loginBtn.setTitle("Login", for: .normal)
             self.userImg.image = UIImage(named: "menuProfileIcon")
             self.userImg.backgroundColor = UIColor.clear
+            tableChannel.reloadData()
         }
     }
     
@@ -56,19 +59,29 @@ class ChannelVC: UIViewController {
     }
     
     @IBAction func addChannelButton(_ sender: UIButton) {
-        let addChannel = AddChannelVC()
-        addChannel.modalPresentationStyle = .custom
-        self.present(addChannel, animated: true, completion: nil)
+        if AuthService.instance.isLoggedIn {
+            let addChannel = AddChannelVC()
+            addChannel.modalPresentationStyle = .custom
+            self.present(addChannel, animated: true, completion: nil)
+        }
     }
-    
     
     @objc func userDataDidChange(_ notification: Notification) {
         self.setupUserInfo()
     }
+    
+    @objc func channelsLoaded(_ notification: Notification) {
+        self.tableChannel.reloadData()
+    }
 }
 
 extension ChannelVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = MessageService.instance.channels[indexPath.row]
+        MessageService.instance.selectedChannel = channel
+        NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
+        self.revealViewController().revealToggle(animated: true)
+    }
 }
 
 extension ChannelVC: UITableViewDataSource {
