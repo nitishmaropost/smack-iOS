@@ -24,11 +24,13 @@ class ChatVC: UIViewController {
             }
         }
         
-        MessageService.instance.findAllChannels { (success) in
-            if success {
-                print("success")
-            } else {
-                print("fail")
+        if AuthService.instance.isLoggedIn {
+            MessageService.instance.findAllChannels { (success) in
+                if success {
+                    print("success")
+                } else {
+                    print("fail")
+                }
             }
         }
     }
