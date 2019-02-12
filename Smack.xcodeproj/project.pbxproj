@@ -36,6 +36,7 @@
 		BFC6526922117A8500CFE543 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC6526722117A8500CFE543 /* AddChannelVC.xib */; };
 		BFC6526B2211904900CFE543 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6526A2211904900CFE543 /* SocketService.swift */; };
 		BFC6526D2212C27200CFE543 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6526C2212C27200CFE543 /* Message.swift */; };
+		BFC6526F2212CA3000CFE543 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6526E2212CA3000CFE543 /* KeyboardBoundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		BFC6526722117A8500CFE543 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
 		BFC6526A2211904900CFE543 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		BFC6526C2212C27200CFE543 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		BFC6526E2212CA3000CFE543 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		D3C07C870086A65C17C1341D /* Pods_SmackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C63EB789A25619E5357737 /* Pods-SmackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmackTests/Pods-SmackTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +236,7 @@
 		BF9402C021F9C95700EDA559 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BFC6526E2212CA3000CFE543 /* KeyboardBoundView.swift */,
 				BF9402C621F9CECC00EDA559 /* GradientView.swift */,
 				BF35B2E321FB276500F6E97F /* RoundedButton.swift */,
 				BF388A292202F7BE003BE457 /* AvatarCell.swift */,
@@ -413,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC6526F2212CA3000CFE543 /* KeyboardBoundView.swift in Sources */,
 				BFC6526B2211904900CFE543 /* SocketService.swift in Sources */,
 				BF388A3322085DF5003BE457 /* ProfileVC.swift in Sources */,
 				BFC65265221156E600CFE543 /* ChannelCell.swift in Sources */,
