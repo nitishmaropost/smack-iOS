@@ -14,13 +14,15 @@ class ChatVC: UIViewController {
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var labelChannelName: UILabel!
     @IBOutlet weak var txtMessage: UITextField!
-    
+    @IBOutlet weak var tableChat: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.bindToKeyboard()
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
         self.view.addGestureRecognizer(tap)
+        self.tableChat.estimatedRowHeight = 80
+        self.tableChat.rowHeight = UITableViewAutomaticDimension
         self.menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
@@ -97,7 +99,31 @@ class ChatVC: UIViewController {
         }
         
         MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
-            
+            if success {
+                self.tableChat.reloadData()
+            }
         }
     }
+}
+
+extension ChatVC: UITableViewDelegate {
+    
+}
+
+extension ChatVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as? MessageCell {
+            let message = MessageService.instance.messages[indexPath.row]
+            cell.configureCell(message: message)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    
 }
