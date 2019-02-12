@@ -35,6 +35,7 @@
 		BFC6526822117A8500CFE543 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6526622117A8500CFE543 /* AddChannelVC.swift */; };
 		BFC6526922117A8500CFE543 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC6526722117A8500CFE543 /* AddChannelVC.xib */; };
 		BFC6526B2211904900CFE543 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6526A2211904900CFE543 /* SocketService.swift */; };
+		BFC6526D2212C27200CFE543 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6526C2212C27200CFE543 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		BFC6526622117A8500CFE543 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		BFC6526722117A8500CFE543 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
 		BFC6526A2211904900CFE543 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
+		BFC6526C2212C27200CFE543 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D3C07C870086A65C17C1341D /* Pods_SmackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C63EB789A25619E5357737 /* Pods-SmackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmackTests/Pods-SmackTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				BF133563220C04650058757B /* Channel.swift */,
+				BFC6526C2212C27200CFE543 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				BF9402C521F9C98F00EDA559 /* ChannelVC.swift in Sources */,
 				BF388A282202F5E1003BE457 /* AvatarPickerVC.swift in Sources */,
 				BF35B2E421FB276500F6E97F /* RoundedButton.swift in Sources */,
+				BFC6526D2212C27200CFE543 /* Message.swift in Sources */,
 				BF133564220C04650058757B /* Channel.swift in Sources */,
 				BF388A2C22044C2A003BE457 /* CircleImage.swift in Sources */,
 				BF133562220C04030058757B /* MessageService.swift in Sources */,
