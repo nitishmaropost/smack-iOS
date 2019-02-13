@@ -16,6 +16,7 @@ class ChatVC: UIViewController {
     @IBOutlet weak var txtMessage: UITextField!
     @IBOutlet weak var tableChat: UITableView!
     @IBOutlet weak var buttonSend: UIButton!
+    @IBOutlet weak var labelTyping: UILabel!
     
     // Variables
     var isTyping = false
@@ -28,6 +29,7 @@ class ChatVC: UIViewController {
         self.tableChat.estimatedRowHeight = 80
         self.tableChat.rowHeight = UITableViewAutomaticDimension
         self.buttonSend.isHidden = true
+        self.labelTyping.text = ""
         self.menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
@@ -40,6 +42,34 @@ class ChatVC: UIViewController {
                 if MessageService.instance.messages.count > 0 {
                     self.tableChat.scrollToRow(at: IndexPath(row: MessageService.instance.messages.count - 1, section: 0), at: .bottom, animated: true)
                 }
+            }
+        }
+        
+        SocketService.instance.getTypingUsers { (typingUsers) in
+            guard let channelId = MessageService.instance.selectedChannel?._id else { return }
+            var names = ""
+            var numberOfTypers = 0
+            for (typingUser, channel) in typingUsers {
+                if typingUser != UserDataService.instance.name && channel == channelId {
+                    if names == "" {
+                        names = typingUser
+                    } else {
+                        names = "\(names), \(typingUser)"
+                    }
+                    
+                    numberOfTypers += 1
+                }
+            }
+            
+            if numberOfTypers > 0 && AuthService.instance.isLoggedIn {
+                var verb = "is"
+                if numberOfTypers > 1 {
+                    verb = "are"
+                }
+                
+                self.labelTyping.text = "\(names) \(verb) typing a message"
+            } else {
+                self.labelTyping.text = ""
             }
         }
         
@@ -68,18 +98,24 @@ class ChatVC: UIViewController {
                 if success {
                     self.txtMessage.text = ""
                     self.txtMessage.resignFirstResponder()
+                     SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
                 }
             }
         }
     }
     
     @IBAction func textFieldTextChanged(_ sender: Any) {
+        guard let channelId = MessageService.instance.selectedChannel?._id else {
+            return
+        }
         if self.txtMessage.text == "" {
             self.isTyping = false
             self.buttonSend.isHidden = true
+            SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
         } else {
             if self.isTyping == false {
                 self.buttonSend.isHidden = false
+                SocketService.instance.socket.emit("startType", UserDataService.instance.name, channelId)
             }
             
             self.isTyping = true
