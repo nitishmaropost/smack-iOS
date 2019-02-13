@@ -10,7 +10,7 @@ import UIKit
 import SocketIO
 
 class SocketService: NSObject {
-
+    
     static let instance = SocketService()
     var manager: SocketManager
     var socket: SocketIOClient
@@ -60,7 +60,7 @@ class SocketService: NSObject {
         completion(true)
     }
     
-    func getChatMessage(completion: @escaping CompletionHandler) {
+    func getChatMessage(completion: @escaping (_ newMessage: Message) -> Void) {
         self.socket.on("messageCreated") { (dataArray, ack) in
             guard let messageBody = dataArray[0] as? String else { return }
             guard let userId = dataArray[1] as? String else { return }
@@ -70,13 +70,10 @@ class SocketService: NSObject {
             guard let userAvatarColor = dataArray[5] as? String else { return }
             guard let messageId = dataArray[6] as? String else { return }
             guard let timeStamp = dataArray[7] as? String else { return }
-            if channelId == MessageService.instance.selectedChannel?._id && AuthService.instance.isLoggedIn {
-                let message = Message(_id: messageId, messageBody: messageBody, userId: userId, channelId: channelId, userName: userName, userAvatar: userAvatar, userAvatarColor: userAvatarColor, __v: 0, timeStamp: timeStamp)
-                MessageService.instance.messages.append(message)
-                completion(true)
-            } else {
-                completion(false)
-            }
+            
+            let message = Message(_id: messageId, messageBody: messageBody, userId: userId, channelId: channelId, userName: userName, userAvatar: userAvatar, userAvatarColor: userAvatarColor, __v: 0, timeStamp: timeStamp)
+            completion(message)
+            
         }
     }
     
